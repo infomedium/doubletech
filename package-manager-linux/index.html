@@ -207,6 +207,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../commands-linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gh-pages/" class="md-nav__link">
         
   
@@ -235,6 +254,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux Package Managers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -244,6 +274,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands-high-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful commands - high Level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands-low-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful commands - low level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -269,6 +354,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands-high-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful commands - high Level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands-low-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful commands - low level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -283,6 +412,7 @@
 
 
 <h1 id="linux-package-managers">Linux Package Managers</h1>
+<h2 id="types">Types</h2>
 <div class="highlight"><pre><span></span><code>*.deb file
     Debian-based systems
         Debian
@@ -314,10 +444,164 @@
         - successor to YUM
         - available starting from RHEL 8
 </code></pre></div>
-<h4 id="appendix">Appendix</h4>
+<h2 id="useful-commands-high-level">Useful commands - high Level</h2>
+<table>
+<thead>
+<tr>
+<th>S#</th>
+<th>Info</th>
+<th><code>apt</code></th>
+<th><code>yum</code></th>
+<th><code>dnf</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fetches the list of available updates</td>
+<td><code>sudo apt update</code> <br/><br/> <code>apt list --upgradable</code></td>
+<td><code>yum check-update</code> <br/><br/> <code>yum update</code> ?</td>
+<td><code>dnf list updates</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Installs some updates; does not remove packages</td>
+<td><code>sudo apt upgrade</code></td>
+<td><code>yum upgrade</code></td>
+<td><code>dnf upgrade</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Installs updates; may also remove some packages, if needed</td>
+<td><code>sudo apt full-upgrade</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Removes any old packages that are no longer needed</td>
+<td><code>sudo apt autoremove</code></td>
+<td><code>sudo yum autoremove</code></td>
+<td><code>sudo dnf autoremove</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Search in package description</td>
+<td><code>apt search &lt;text to search e.g. &gt;</code></td>
+<td><code>yum search &lt;text to search e.g. &gt;</code></td>
+<td><code>dnf search &lt;text to search e.g. &gt;</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Show details of a package</td>
+<td><code>apt show &lt;package name e.g. npm&gt;</code></td>
+<td><code>yum info &lt;package name e.g. npm&gt;</code></td>
+<td><code>dnf info &lt;package name e.g. npm&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Show changelog of a package</td>
+<td><code>apt changelog &lt;package name e.g. npm&gt;</code></td>
+<td><code>yum changelog &lt;package name e.g. npm&gt;</code></td>
+<td><code>dnf changelog &lt;package name e.g. npm&gt;</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>List packages with matching name</td>
+<td><code>apt list &lt;package name e.g. npm*&gt;</code></td>
+<td><code>yum list &lt;package name e.g. npm*&gt;</code></td>
+<td><code>dnf list &lt;package name e.g. npm*&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td>List packages which are installed</td>
+<td><code>apt list --installed</code></td>
+<td><code>yum list --installed</code></td>
+<td><code>dnf list --installed</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Install a package</td>
+<td><code>sudo apt install &lt;package name e.g. npm&gt;</code></td>
+<td><code>sudo yum install &lt;package name e.g. npm&gt;</code></td>
+<td><code>sudo dnf install &lt;package name e.g. npm&gt;</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Reinstall a package</td>
+<td><code>sudo apt reinstall &lt;package name e.g. npm&gt;</code></td>
+<td><code>sudo yum reinstall &lt;package name e.g. npm&gt;</code></td>
+<td><code>sudo dnf reinstall &lt;package name e.g. npm&gt;</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Remove a package</td>
+<td><code>sudo apt remove &lt;package name e.g. npm&gt;</code></td>
+<td><code>sudo yum remove &lt;package name e.g. npm&gt;</code></td>
+<td><code>sudo dnf remove &lt;package name e.g. npm&gt;</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Show transaction history</td>
+<td><code>cat /var/log/apt/history.log</code></td>
+<td><code>yum history</code></td>
+<td><code>dnf history</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Rollback</td>
+<td></td>
+<td><code>yum history rollback &lt;ID&gt;</code></td>
+<td><code>dnf history rollback &lt;ID&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="useful-commands-low-level">Useful commands - low level</h2>
+<table>
+<thead>
+<tr>
+<th>S#</th>
+<th>Info</th>
+<th><code>dpkg</code></th>
+<th><code>rpm</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>List files of package installed</td>
+<td><code>dpkg --listfiles &lt;package name e.g. npm&gt;</code></td>
+<td><code>rpm -ql &lt;package name e.g. npm&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+
+<h2 id="appendix">Appendix</h2>
+<h4 id="does-apt-autoremove-remove-all-the-unused-packages">Does <code>apt autoremove</code> remove all the unused packages?</h4>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<span class="c1"># 983</span>
+
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vlc
+
+apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<span class="c1"># 1162</span>
+
+sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>vlc
+
+apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<span class="c1"># 1161</span>
+
+sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
+
+apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<span class="c1"># 984</span>
+</code></pre></div>
+<h4 id="reference">Reference</h4>
 <ul>
 <li><a href="https://aws.amazon.com/compare/the-difference-between-apt-and-apt-get">https://aws.amazon.com/compare/the-difference-between-apt-and-apt-get</a></li>
 <li><a href="https://www.tecmint.com/redhat-vs-debian">https://www.tecmint.com/redhat-vs-debian</a></li>
+<li><a href="https://www.redhat.com/en/interactive-labs">https://www.redhat.com/en/interactive-labs</a></li>
 </ul>
 
 
